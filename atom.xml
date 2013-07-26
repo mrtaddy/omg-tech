@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://mrtaddy.github.io/omg-tech/atom.xml" rel="self"/>
-  <link href="http://mrtaddy.github.io/omg-tech/"/>
-  <updated>2013-07-26T14:38:30+09:00</updated>
-  <id>http://mrtaddy.github.io/omg-tech/</id>
+  <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
+  <link href="http://tech.ohmyglasses.jp/"/>
+  <updated>2013-07-26T17:21:11+09:00</updated>
+  <id>http://tech.ohmyglasses.jp/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
     

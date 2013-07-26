@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://mrtaddy.github.io/omg-tech/blog/archives/</loc>
+        <loc>http://tech.ohmyglasses.jp/blog/archives/</loc>
         <lastmod>2013-07-26T13:59:21+09:00</lastmod>
     </url>
     <url>
-        <loc>http://mrtaddy.github.io/omg-tech/</loc>
+        <loc>http://tech.ohmyglasses.jp/</loc>
         <lastmod>2013-07-26T13:59:21+09:00</lastmod>
     </url>
     <url>
-        <loc>http://mrtaddy.github.io/omg-tech/robots.txt</loc>
+        <loc>http://tech.ohmyglasses.jp/robots.txt</loc>
         <lastmod>2013-07-26T13:59:21+09:00</lastmod>
     </url>
 </urlset>
