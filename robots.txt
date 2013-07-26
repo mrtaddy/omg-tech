@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://mrtaddy.github.io/omg-tech/sitemap.xml 
