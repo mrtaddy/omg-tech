@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>OMG Tech Blog</title>
+  <title>localのcronから朝会を通知したい - OMG Tech Blog</title>
   <meta name="author" content="OMG Engineers">
 
   
@@ -24,7 +24,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.ohmyglasses.jp/">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -72,15 +72,12 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   <div id="body"  >
     <div id="main">
       <div id="content">
-        <div class="blog-index">
+        <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/08/14/local-whenever/">Localのcronから朝会を通知したい</a></h1>
+      <h1 class="entry-title">Localのcronから朝会を通知したい</h1>
     
     
       <p class="meta">
@@ -103,7 +100,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>こんにちは。さねまつです。</p>
+<div class="entry-content"><p>こんにちは。さねまつです。</p>
 
 <p>ローカルのcrontab, 特に管理してなくてうっかり消しました。</p>
 
@@ -171,147 +168,16 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
 
 <p>以上デース</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/02/bookmarklet-with-yeoman/">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">sanemat</span></span>
 
-<time datetime="2013-08-02T16:40:00+09:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>こんにちは。さねまつです。</p>
-
-<p>商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。</p>
-
-<h3>なかむらくんに通報する</h3>
-
-<p><img src="/images/police_400x483.jpg" title="police" alt="なかむらくんに通報する" /></p>
-
-<p>技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、yoでbookmarklet用のtempleateをgenerateして、gruntで変更をwatch, 変更あったらminifyしてbookmarkletとして出力しています。変更をwatch~というのもgenerateしたtemplateに書いてあるので、やるのは <code>grunt server</code> 実行するだけです。</p>
-
-<p><a href="https://github.com/mrtaddy/omg-copy-sku">商品情報をアラートするブックマークレット</a></p>
-
-<h4>使い方</h4>
-
-<ol>
-<li>bookmarkletを登録します。(dist/bookmarklet.js)</li>
-<li><a href="http://www.ohmyglasses.jp/products/plus-omg-OMG-004-1">商品ページ</a>を開きます。</li>
-<li>bookmarkletを実行すると、ページ内の商品情報をスクレイピングしてalertします。</li>
-</ol>
-
-
-<h4>仕組み</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yo bookmarklet <span class="c"># bookmarklet用のtemplateをgenerate</span>
-</span><span class='line'>grunt server
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>app/main.js を編集していくと保存するたびに dist/bookmarklet.js にbookmarkletを作成します。処理内容はgeneratorがGruntfile.js を生成していて、そこに書いてあります。</p>
-
-<p>coffeescriptで書けたらいいなーというのはgruntfile書けば良さそうで、あとGruntfile自体もcoffeeで書けるそうだ(伝聞)。</p>
-
-<h4>see</h4>
-
-<ul>
-<li><a href="http://qiita.com/sys1yagi/items/4d8c2994580c274fd3fa">Node.js &ndash; Yeomanのあれこれ &ndash; Qiita [キータ]</a></li>
-<li><a href="http://qiita.com/Layzie/items/5c4af49ef083b2c1cbf0">JavaScript &ndash; Bookmarklet作るのにYeoman使ってみる &ndash; Qiita [キータ]</a></li>
-</ul>
-
-
-<h3>その他なかむらくんに通報するtips</h3>
-
-<h4>なかむらくんに通報するブックマーク</h4>
-
-<p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nakamura@example.com&amp;cc=ops@example.com&amp;su=%e5%95%86%e5%93%81%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ab%e3%83%9f%e3%82%b9%e7%99%ba%e8%a6%8b&amp;body=&amp;tf=1">https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nakamura@example.com&amp;cc=ops@example.com&amp;su=%e5%95%86%e5%93%81%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ab%e3%83%9f%e3%82%b9%e7%99%ba%e8%a6%8b&amp;body=&amp;tf=1</a></p>
-
-<p>こちらはリンクだけ。やりたいことを最短で満たしたしいいやこれで。</p>
-
-<h4>管理画面のeditページ直接開くbookmarklet</h4>
-
-<p>商品ページからjQueryで要素拾って、管理画面の対応するeditページをopen</p>
-
-<h4>画像を横並びに比較して間違いに気づきやすいview</h4>
-
-<ul>
-<li>controllerはadmin側</li>
-<li>model, serviceは検索で使ってるものと同じ</li>
-<li>viewがちょっと違う</li>
-<li>だいたい<a href="http://www.ohmyglasses.jp/search/frame/mens?color%5B%5D=black&amp;color%5B%5D=gray&amp;shape=wellington">これ</a>の別view</li>
-</ul>
-
-
-<p>編集ページのパーマリンクへリンクあり</p>
-
-<h3>実現したストーリー</h3>
-
-<p>before:</p>
-
-<ul>
-<li>商品情報が間違っているのを見つけた!</li>
-<li>どこに書いていいかわからない… 直していいかわからない… 直すのだるい…</li>
-<li>間違ってるから直してって言われたけどどの商品のどこだっけ</li>
-</ul>
-
-
-<p>after:</p>
-
-<ul>
-<li>商品情報が間違っているのを見つけた!</li>
-<li>自分でedit, キャッシュも消す</li>
-<li>コピペが楽になったので、送って直してもらう場合にもお互い分かりやすい</li>
-<li>ひとまずメールで残る</li>
-</ul>
-
-
-<p>ﾔｯﾀｰ! (メールってフォーマットだるいですねというのはまた別のお話)</p>
-
-<p>以上デース</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/26/start-omg-engineers-blog/">Oh My Glasses エンジニアブログを立ち上げました！</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -323,27 +189,42 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   
 
 
-<time datetime="2013-07-26T20:45:00+09:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-08-14T10:25:00+09:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content">
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/02/bookmarklet-with-yeoman/" title="Previous Post: なかむらくんに通報する、あるいはYeomanでbookmarkletを作る">&laquo; なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -369,7 +250,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -397,6 +278,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   
 </aside>
 
+
       </div>
     </div>
     <footer role="contentinfo"><p>
@@ -411,7 +293,10 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
       var disqus_shortname = 'omgtechblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/';
+        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

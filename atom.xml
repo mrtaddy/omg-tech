@@ -4,7 +4,7 @@
   <title><![CDATA[OMG Tech Blog]]></title>
   <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
   <link href="http://tech.ohmyglasses.jp/"/>
-  <updated>2013-07-26T22:15:27+09:00</updated>
+  <updated>2013-08-28T13:50:03+09:00</updated>
   <id>http://tech.ohmyglasses.jp/</id>
   <author>
     <name><![CDATA[OMG Engineers]]></name>
@@ -12,6 +12,179 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[localのcronから朝会を通知したい]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/"/>
+    <updated>2013-08-14T10:25:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever</id>
+    <content type="html"><![CDATA[<p>こんにちは。さねまつです。</p>
+
+<p>ローカルのcrontab, 特に管理してなくてうっかり消しました。</p>
+
+<h3>crontab</h3>
+
+<p><img src="http://tech.ohmyglasses.jp/images/alarm_400x267.jpg" title="alarm" alt="crontab" /></p>
+
+<p>wheneverで書いてリポジトリ管理しておくとうれしいですね。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">every</span> <span class="ss">:weekday</span><span class="p">,</span> <span class="ss">at</span><span class="p">:</span> <span class="s1">&#39;10:15 am&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">command</span> <span class="s2">&quot;echo &#39;朝会です&#39;| </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;PATH_TO_HIPCHAT_CLI_BIN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -t </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;HIPCHAT_TOKEN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -r </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;ROOM_AOBA&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -f &#39;sebastian&#39;&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">every</span> <span class="ss">:thursday</span><span class="p">,</span> <span class="ss">at</span><span class="p">:</span> <span class="s1">&#39;3pm&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">command</span> <span class="s2">&quot;echo &#39;コードレビューです&#39;| </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;PATH_TO_HIPCHAT_CLI_BIN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -t </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;HIPCHAT_TOKEN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -r </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;ROOM_AOBA&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -f &#39;sebastian&#39;&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>こんな感じ。<a href="https://github.com/mrtaddy/sebastian/blob/e6f3ec4ea6a55b319c1250e5b8d9fd79af2c7a55/config/schedule.rb">sebastian</a></p>
+
+<p>heroku エコシステム駆使するとか、空いてるサーバーにいれちゃうとか、ちょっと考えてめんどくさくなったのでローカルのまま運用してます。</p>
+
+<h3>hipchat api</h3>
+
+<p>どれ使ってもいいんじゃないでしょうか(未確認)
+<a href="https://www.hipchat.com/docs/api/libraries">https://www.hipchat.com/docs/api/libraries</a></p>
+
+<ul>
+<li>bash
+
+<ul>
+<li><a href="https://github.com/hipchat/hipchat-cli">https://github.com/hipchat/hipchat-cli</a></li>
+</ul>
+</li>
+<li>ruby
+
+<ul>
+<li><a href="https://github.com/hipchat/hipchat-rb">https://github.com/hipchat/hipchat-rb</a></li>
+<li><a href="https://github.com/czarneckid/hipchat-api">https://github.com/czarneckid/hipchat-api</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p>pure rubyの使うと取り回し良さそうなのですが、ひとまずbash版で動いているのでほっといてます。パイプで動くとunixのテコの原理に載ってる気になれてよい。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;コードレビューです&#39;</span>| ./hipchat_room_message -t TOKEN -r ROOM_NUMBER -f NAME
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>設定管理は大げさじゃないのがいいなと<a href="https://rubygems.org/gems/dotenv">dotenv</a>使ってます。まあまあ便利。</p>
+
+<p>see: <a href="https://www.ruby-toolbox.com/categories/Configuration_Management">The Ruby Toolbox &ndash; Configuration Management</a></p>
+
+<h3>ローカルで動かしてる最大の欠点</h3>
+
+<p>朝会開始の時間に自分が出社してないと発言しないので、あれだ。可視化されますね。</p>
+
+<p>以上デース</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[なかむらくんに通報する、あるいはYeomanでbookmarkletを作る]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/"/>
+    <updated>2013-08-02T16:40:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman</id>
+    <content type="html"><![CDATA[<p>こんにちは。さねまつです。</p>
+
+<p>商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。</p>
+
+<h3>なかむらくんに通報する</h3>
+
+<p><img src="http://tech.ohmyglasses.jp/images/police_400x483.jpg" title="police" alt="なかむらくんに通報する" /></p>
+
+<p>技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、yoでbookmarklet用のtempleateをgenerateして、gruntで変更をwatch, 変更あったらminifyしてbookmarkletとして出力しています。変更をwatch~というのもgenerateしたtemplateに書いてあるので、やるのは <code>grunt server</code> 実行するだけです。</p>
+
+<p><a href="https://github.com/mrtaddy/omg-copy-sku">商品情報をアラートするブックマークレット</a></p>
+
+<h4>使い方</h4>
+
+<ol>
+<li>bookmarkletを登録します。(dist/bookmarklet.js)</li>
+<li><a href="http://www.ohmyglasses.jp/products/plus-omg-OMG-004-1">商品ページ</a>を開きます。</li>
+<li>bookmarkletを実行すると、ページ内の商品情報をスクレイピングしてalertします。</li>
+</ol>
+
+
+<h4>仕組み</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>yo bookmarklet <span class="c"># bookmarklet用のtemplateをgenerate</span>
+</span><span class='line'>grunt server
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>app/main.js を編集していくと保存するたびに dist/bookmarklet.js にbookmarkletを作成します。処理内容はgeneratorがGruntfile.js を生成していて、そこに書いてあります。</p>
+
+<p>coffeescriptで書けたらいいなーというのはgruntfile書けば良さそうで、あとGruntfile自体もcoffeeで書けるそうだ(伝聞)。</p>
+
+<h4>see</h4>
+
+<ul>
+<li><a href="http://qiita.com/sys1yagi/items/4d8c2994580c274fd3fa">Node.js &ndash; Yeomanのあれこれ &ndash; Qiita [キータ]</a></li>
+<li><a href="http://qiita.com/Layzie/items/5c4af49ef083b2c1cbf0">JavaScript &ndash; Bookmarklet作るのにYeoman使ってみる &ndash; Qiita [キータ]</a></li>
+</ul>
+
+
+<h3>その他なかむらくんに通報するtips</h3>
+
+<h4>なかむらくんに通報するブックマーク</h4>
+
+<p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nakamura@example.com&amp;cc=ops@example.com&amp;su=%e5%95%86%e5%93%81%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ab%e3%83%9f%e3%82%b9%e7%99%ba%e8%a6%8b&amp;body=&amp;tf=1">https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nakamura@example.com&amp;cc=ops@example.com&amp;su=%e5%95%86%e5%93%81%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ab%e3%83%9f%e3%82%b9%e7%99%ba%e8%a6%8b&amp;body=&amp;tf=1</a></p>
+
+<p>こちらはリンクだけ。やりたいことを最短で満たしたしいいやこれで。</p>
+
+<h4>管理画面のeditページ直接開くbookmarklet</h4>
+
+<p>商品ページからjQueryで要素拾って、管理画面の対応するeditページをopen</p>
+
+<h4>画像を横並びに比較して間違いに気づきやすいview</h4>
+
+<ul>
+<li>controllerはadmin側</li>
+<li>model, serviceは検索で使ってるものと同じ</li>
+<li>viewがちょっと違う</li>
+<li>だいたい<a href="http://www.ohmyglasses.jp/search/frame/mens?color%5B%5D=black&amp;color%5B%5D=gray&amp;shape=wellington">これ</a>の別view</li>
+</ul>
+
+
+<p>編集ページのパーマリンクへリンクあり</p>
+
+<h3>実現したストーリー</h3>
+
+<p>before:</p>
+
+<ul>
+<li>商品情報が間違っているのを見つけた!</li>
+<li>どこに書いていいかわからない… 直していいかわからない… 直すのだるい…</li>
+<li>間違ってるから直してって言われたけどどの商品のどこだっけ</li>
+</ul>
+
+
+<p>after:</p>
+
+<ul>
+<li>商品情報が間違っているのを見つけた!</li>
+<li>自分でedit, キャッシュも消す</li>
+<li>コピペが楽になったので、送って直してもらう場合にもお互い分かりやすい</li>
+<li>ひとまずメールで残る</li>
+</ul>
+
+
+<p>ﾔｯﾀｰ! (メールってフォーマットだるいですねというのはまた別のお話)</p>
+
+<p>以上デース</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Oh My Glasses エンジニアブログを立ち上げました！]]></title>

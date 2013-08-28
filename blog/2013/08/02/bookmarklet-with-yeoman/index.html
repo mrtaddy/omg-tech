@@ -5,17 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>OMG Tech Blog</title>
+  <title>なかむらくんに通報する、あるいはYeomanでbookmarkletを作る - OMG Tech Blog</title>
   <meta name="author" content="OMG Engineers">
 
   
-  <meta name="description" content="こんにちは。さねまつです。 ローカルのcrontab, 特に管理してなくてうっかり消しました。 crontab wheneverで書いてリポジトリ管理しておくとうれしいですね。 1
-2
-3
-4
-5
-6
-every :weekday, at: &#39;10:15 am&#39; do &hellip;">
+  <meta name="description" content="こんにちは。さねまつです。 商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。 なかむらくんに通報する 技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +18,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.ohmyglasses.jp/">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -72,117 +66,12 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   <div id="body"  >
     <div id="main">
       <div id="content">
-        <div class="blog-index">
+        <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/08/14/local-whenever/">Localのcronから朝会を通知したい</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-14T10:25:00+09:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>こんにちは。さねまつです。</p>
-
-<p>ローカルのcrontab, 特に管理してなくてうっかり消しました。</p>
-
-<h3>crontab</h3>
-
-<p><img src="/images/alarm_400x267.jpg" title="alarm" alt="crontab" /></p>
-
-<p>wheneverで書いてリポジトリ管理しておくとうれしいですね。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">every</span> <span class="ss">:weekday</span><span class="p">,</span> <span class="ss">at</span><span class="p">:</span> <span class="s1">&#39;10:15 am&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">command</span> <span class="s2">&quot;echo &#39;朝会です&#39;| </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;PATH_TO_HIPCHAT_CLI_BIN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -t </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;HIPCHAT_TOKEN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -r </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;ROOM_AOBA&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -f &#39;sebastian&#39;&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="n">every</span> <span class="ss">:thursday</span><span class="p">,</span> <span class="ss">at</span><span class="p">:</span> <span class="s1">&#39;3pm&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">command</span> <span class="s2">&quot;echo &#39;コードレビューです&#39;| </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;PATH_TO_HIPCHAT_CLI_BIN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -t </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;HIPCHAT_TOKEN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -r </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;ROOM_AOBA&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -f &#39;sebastian&#39;&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>こんな感じ。<a href="https://github.com/mrtaddy/sebastian/blob/e6f3ec4ea6a55b319c1250e5b8d9fd79af2c7a55/config/schedule.rb">sebastian</a></p>
-
-<p>heroku エコシステム駆使するとか、空いてるサーバーにいれちゃうとか、ちょっと考えてめんどくさくなったのでローカルのまま運用してます。</p>
-
-<h3>hipchat api</h3>
-
-<p>どれ使ってもいいんじゃないでしょうか(未確認)
-<a href="https://www.hipchat.com/docs/api/libraries">https://www.hipchat.com/docs/api/libraries</a></p>
-
-<ul>
-<li>bash
-
-<ul>
-<li><a href="https://github.com/hipchat/hipchat-cli">https://github.com/hipchat/hipchat-cli</a></li>
-</ul>
-</li>
-<li>ruby
-
-<ul>
-<li><a href="https://github.com/hipchat/hipchat-rb">https://github.com/hipchat/hipchat-rb</a></li>
-<li><a href="https://github.com/czarneckid/hipchat-api">https://github.com/czarneckid/hipchat-api</a></li>
-</ul>
-</li>
-</ul>
-
-
-<p>pure rubyの使うと取り回し良さそうなのですが、ひとまずbash版で動いているのでほっといてます。パイプで動くとunixのテコの原理に載ってる気になれてよい。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;コードレビューです&#39;</span>| ./hipchat_room_message -t TOKEN -r ROOM_NUMBER -f NAME
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>設定管理は大げさじゃないのがいいなと<a href="https://rubygems.org/gems/dotenv">dotenv</a>使ってます。まあまあ便利。</p>
-
-<p>see: <a href="https://www.ruby-toolbox.com/categories/Configuration_Management">The Ruby Toolbox &ndash; Configuration Management</a></p>
-
-<h3>ローカルで動かしてる最大の欠点</h3>
-
-<p>朝会開始の時間に自分が出社してないと発言しないので、あれだ。可視化されますね。</p>
-
-<p>以上デース</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/02/bookmarklet-with-yeoman/">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</a></h1>
+      <h1 class="entry-title">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</h1>
     
     
       <p class="meta">
@@ -205,7 +94,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>こんにちは。さねまつです。</p>
+<div class="entry-content"><p>こんにちは。さねまつです。</p>
 
 <p>商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。</p>
 
@@ -296,22 +185,16 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
 
 <p>以上デース</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/26/start-omg-engineers-blog/">Oh My Glasses エンジニアブログを立ち上げました！</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">sanemat</span></span>
+
+      
 
 
 
@@ -323,27 +206,44 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   
 
 
-<time datetime="2013-07-26T20:45:00+09:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-08-02T16:40:00+09:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content">
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/26/start-omg-engineers-blog/" title="Previous Post: Oh My Glasses エンジニアブログを立ち上げました！">&laquo; Oh My Glasses エンジニアブログを立ち上げました！</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/08/14/local-whenever/" title="Next Post: localのcronから朝会を通知したい">localのcronから朝会を通知したい &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -369,7 +269,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -397,6 +297,7 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
   
 </aside>
 
+
       </div>
     </div>
     <footer role="contentinfo"><p>
@@ -411,7 +312,10 @@ every :weekday, at: &#39;10:15 am&#39; do &hellip;">
       var disqus_shortname = 'omgtechblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/';
+        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
