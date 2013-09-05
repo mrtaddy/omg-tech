@@ -18,13 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mrtaddy.github.io/omg-tech/">
-  <link href="/omg-tech/favicon.png" rel="icon">
-  <link href="/omg-tech/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/omg-tech/javascripts/modernizr-2.0.js"></script>
-  <script src="/omg-tech/javascripts/ender.js"></script>
-  <script src="/omg-tech/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/omg-tech/atom.xml" rel="alternate" title="OMG Tech Blog" type="application/atom+xml">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OMG Tech Blog" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -37,26 +37,26 @@
 <body>
   <div id="navigation">
     <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/omg-tech/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:mrtaddy.github.io/omg-tech" />
+    <input type="hidden" name="q" value="site:tech.ohmyglasses.jp" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/omg-tech/">Blog</a></li>
-  <li><a href="/omg-tech/blog/archives">Archives</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
 </nav>
   </div>
   <header role="banner"><hgroup>
-  <h1><a href="/omg-tech/">OMG Tech Blog</a></h1>
+  <h1><a href="/">OMG Tech Blog</a></h1>
   
     <h2>Oh My Glasses Engineers' Blog</h2>
   
@@ -74,7 +74,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/omg-tech/blog/2013/09/03/travis-ci-restart-build/">テストを落としたのでTravis-CIのbuildを再キックする</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/09/03/travis-ci-restart-build/">テストを落としたのでTravis-CIのbuildを再キックする</a></h1>
     
     
       <p class="meta">
@@ -101,7 +101,7 @@
 
 <p>Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。</p>
 
-<p><img src="/omg-tech/images/travis-pro_400x400.gif" title="restart" alt="restart-build" /></p>
+<p><img src="/images/travis-pro_400x400.gif" title="restart" alt="restart-build" /></p>
 
 <p>弊社オーマイグラスはprivate なreposもテストしたいので、<a href="http://travis-ci.com/">Travis PRO</a>使ってます。Restart Buildは、pro関係なく、自分にadmin権限あればrestartできます。権限足りないと押せないみたい。
 なお<a href="https://github.com/travis-ci/travis">cli client</a>からだと
@@ -124,7 +124,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/omg-tech/blog/2013/08/14/local-whenever/">Localのcronから朝会を通知したい</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/08/14/local-whenever/">Localのcronから朝会を通知したい</a></h1>
     
     
       <p class="meta">
@@ -153,7 +153,7 @@
 
 <h3>crontab</h3>
 
-<p><img src="/omg-tech/images/alarm_400x267.jpg" title="alarm" alt="crontab" /></p>
+<p><img src="/images/alarm_400x267.jpg" title="alarm" alt="crontab" /></p>
 
 <p>wheneverで書いてリポジトリ管理しておくとうれしいですね。</p>
 
@@ -226,7 +226,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/omg-tech/blog/2013/08/02/bookmarklet-with-yeoman/">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/08/02/bookmarklet-with-yeoman/">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</a></h1>
     
     
       <p class="meta">
@@ -255,7 +255,7 @@
 
 <h3>なかむらくんに通報する</h3>
 
-<p><img src="/omg-tech/images/police_400x483.jpg" title="police" alt="なかむらくんに通報する" /></p>
+<p><img src="/images/police_400x483.jpg" title="police" alt="なかむらくんに通報する" /></p>
 
 <p>技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、yoでbookmarklet用のtempleateをgenerateして、gruntで変更をwatch, 変更あったらminifyしてbookmarkletとして出力しています。変更をwatch~というのもgenerateしたtemplateに書いてあるので、やるのは <code>grunt server</code> 実行するだけです。</p>
 
@@ -351,7 +351,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/omg-tech/blog/2013/07/26/start-omg-engineers-blog/">Oh My Glasses エンジニアブログを立ち上げました！</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/07/26/start-omg-engineers-blog/">Oh My Glasses エンジニアブログを立ち上げました！</a></h1>
     
     
       <p class="meta">
@@ -384,7 +384,7 @@
   
   <div class="pagination">
     
-    <a href="/omg-tech/blog/archives">Blog Archives</a>
+    <a href="/blog/archives">Blog Archives</a>
     
   </div>
 </div>
@@ -413,19 +413,19 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/omg-tech/blog/2013/09/03/travis-ci-restart-build/">テストを落としたのでTravis-CIのbuildを再キックする</a>
+        <a href="/blog/2013/09/03/travis-ci-restart-build/">テストを落としたのでTravis-CIのbuildを再キックする</a>
       </li>
     
       <li class="post">
-        <a href="/omg-tech/blog/2013/08/14/local-whenever/">localのcronから朝会を通知したい</a>
+        <a href="/blog/2013/08/14/local-whenever/">localのcronから朝会を通知したい</a>
       </li>
     
       <li class="post">
-        <a href="/omg-tech/blog/2013/08/02/bookmarklet-with-yeoman/">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</a>
+        <a href="/blog/2013/08/02/bookmarklet-with-yeoman/">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</a>
       </li>
     
       <li class="post">
-        <a href="/omg-tech/blog/2013/07/26/start-omg-engineers-blog/">Oh My Glasses エンジニアブログを立ち上げました！</a>
+        <a href="/blog/2013/07/26/start-omg-engineers-blog/">Oh My Glasses エンジニアブログを立ち上げました！</a>
       </li>
     
   </ul>
@@ -442,7 +442,7 @@
       getTwitterFeed("ohmyglassesjp", , );
     });
   </script>
-  <script src="/omg-tech/javascripts/twitter.js" type="text/javascript"> </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
     <p>Follow <a href="http://twitter.com/ohmyglassesjp">@ohmyglassesjp</a></p>
   
