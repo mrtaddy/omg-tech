@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[OMG Tech Blog]]></title>
-  <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
-  <link href="http://tech.ohmyglasses.jp/"/>
-  <updated>2013-09-05T14:44:59+09:00</updated>
-  <id>http://tech.ohmyglasses.jp/</id>
+  <link href="http://mrtaddy.github.io/omg-tech/atom.xml" rel="self"/>
+  <link href="http://mrtaddy.github.io/omg-tech/"/>
+  <updated>2013-09-05T15:03:22+09:00</updated>
+  <id>http://mrtaddy.github.io/omg-tech/</id>
   <author>
     <name><![CDATA[OMG Engineers]]></name>
     
@@ -15,14 +15,14 @@
   
   <entry>
     <title type="html"><![CDATA[テストを落としたのでTravis-CIのbuildを再キックする]]></title>
-    <link href="http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/"/>
+    <link href="http://mrtaddy.github.io/omg-tech/blog/2013/09/03/travis-ci-restart-build/"/>
     <updated>2013-09-03T23:46:00+09:00</updated>
-    <id>http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build</id>
+    <id>http://mrtaddy.github.io/omg-tech/blog/2013/09/03/travis-ci-restart-build</id>
     <content type="html"><![CDATA[<p>こんにちは。さねまつです。</p>
 
 <p>Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。</p>
 
-<p><img src="http://tech.ohmyglasses.jp/images/travis-pro_400x400.gif" title="restart" alt="restart-build" /></p>
+<p><img src="http://mrtaddy.github.io/omg-tech/images/travis-pro_400x400.gif" title="restart" alt="restart-build" /></p>
 
 <p>弊社オーマイグラスはprivate なreposもテストしたいので、<a href="http://travis-ci.com/">Travis PRO</a>使ってます。Restart Buildは、pro関係なく、自分にadmin権限あればrestartできます。権限足りないと押せないみたい。
 なお<a href="https://github.com/travis-ci/travis">cli client</a>からだと
@@ -38,16 +38,16 @@
   
   <entry>
     <title type="html"><![CDATA[localのcronから朝会を通知したい]]></title>
-    <link href="http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/"/>
+    <link href="http://mrtaddy.github.io/omg-tech/blog/2013/08/14/local-whenever/"/>
     <updated>2013-08-14T10:25:00+09:00</updated>
-    <id>http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever</id>
+    <id>http://mrtaddy.github.io/omg-tech/blog/2013/08/14/local-whenever</id>
     <content type="html"><![CDATA[<p>こんにちは。さねまつです。</p>
 
 <p>ローカルのcrontab, 特に管理してなくてうっかり消しました。</p>
 
 <h3>crontab</h3>
 
-<p><img src="http://tech.ohmyglasses.jp/images/alarm_400x267.jpg" title="alarm" alt="crontab" /></p>
+<p><img src="http://mrtaddy.github.io/omg-tech/images/alarm_400x267.jpg" title="alarm" alt="crontab" /></p>
 
 <p>wheneverで書いてリポジトリ管理しておくとうれしいですね。</p>
 
@@ -113,16 +113,16 @@
   
   <entry>
     <title type="html"><![CDATA[なかむらくんに通報する、あるいはYeomanでbookmarkletを作る]]></title>
-    <link href="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/"/>
+    <link href="http://mrtaddy.github.io/omg-tech/blog/2013/08/02/bookmarklet-with-yeoman/"/>
     <updated>2013-08-02T16:40:00+09:00</updated>
-    <id>http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman</id>
+    <id>http://mrtaddy.github.io/omg-tech/blog/2013/08/02/bookmarklet-with-yeoman</id>
     <content type="html"><![CDATA[<p>こんにちは。さねまつです。</p>
 
 <p>商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。</p>
 
 <h3>なかむらくんに通報する</h3>
 
-<p><img src="http://tech.ohmyglasses.jp/images/police_400x483.jpg" title="police" alt="なかむらくんに通報する" /></p>
+<p><img src="http://mrtaddy.github.io/omg-tech/images/police_400x483.jpg" title="police" alt="なかむらくんに通報する" /></p>
 
 <p>技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、yoでbookmarklet用のtempleateをgenerateして、gruntで変更をwatch, 変更あったらminifyしてbookmarkletとして出力しています。変更をwatch~というのもgenerateしたtemplateに書いてあるので、やるのは <code>grunt server</code> 実行するだけです。</p>
 
@@ -211,9 +211,9 @@
   
   <entry>
     <title type="html"><![CDATA[Oh My Glasses エンジニアブログを立ち上げました！]]></title>
-    <link href="http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog/"/>
+    <link href="http://mrtaddy.github.io/omg-tech/blog/2013/07/26/start-omg-engineers-blog/"/>
     <updated>2013-07-26T20:45:00+09:00</updated>
-    <id>http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog</id>
+    <id>http://mrtaddy.github.io/omg-tech/blog/2013/07/26/start-omg-engineers-blog</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://tech.ohmyglasses.jp/sitemap.xml 
+Sitemap: http://mrtaddy.github.io/omg-tech/sitemap.xml 
