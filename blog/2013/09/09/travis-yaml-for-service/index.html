@@ -5,11 +5,33 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>テストを落としたのでTravis-CIのbuildを再キックする - OMG Tech Blog</title>
+  <title>.travis.ymlのギャラリー - OMG Tech Blog</title>
   <meta name="author" content="OMG Engineers">
 
   
-  <meta name="description" content="こんにちは。さねまつです。 Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。 &hellip;">
+  <meta name="description" content="こんにちは。さねまつです。 .travis.ymlのギャラリー作ってます。オーマイグラスの.travis.ymlはこんなかんじです。 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+language: ruby
+rvm: - 2.0.0
+env &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +40,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/09/09/travis-yaml-for-service/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +93,7 @@
   
   <header>
     
-      <h1 class="entry-title">テストを落としたのでTravis-CIのbuildを再キックする</h1>
+      <h1 class="entry-title">.travis.ymlのギャラリー</h1>
     
     
       <p class="meta">
@@ -87,7 +109,7 @@
   
 
 
-<time datetime="2013-09-03T23:46:00+09:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+<time datetime="2013-09-09T01:18:00+09:00" pubdate data-updated="true">Sep 9<span>th</span>, 2013</time>
         
       </p>
     
@@ -96,17 +118,63 @@
 
 <div class="entry-content"><p>こんにちは。さねまつです。</p>
 
-<p>Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。</p>
+<p><code>.travis.yml</code>のギャラリー作ってます。オーマイグラスの.travis.ymlはこんなかんじです。</p>
 
-<p><img src="/images/travis-pro_400x400.gif" title="restart" alt="restart-build" /></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">language</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ruby</span>
+</span><span class='line'><span class="l-Scalar-Plain">rvm</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">2.0.0</span>
+</span><span class='line'><span class="l-Scalar-Plain">env</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">DB=mysql</span>
+</span><span class='line'><span class="l-Scalar-Plain">before_install</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">gem install bundler --pre</span>
+</span><span class='line'><span class="l-Scalar-Plain">before_script</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">cp config/database.yml.example config/database.yml</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">cp config/settings.yml.example config/settings.yml</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">export DISPLAY=:99.0</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sh -e /etc/init.d/xvfb start</span>
+</span><span class='line'>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">RAILS_ENV=test bundle exec rake &#39;parallel:create[4]&#39; &#39;parallel:load_schema[4]&#39; &#39;parallel:prepare[4]&#39;</span>
+</span><span class='line'><span class="l-Scalar-Plain">bundler_args</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">--deployment --without development production --jobs=4</span>
+</span><span class='line'><span class="l-Scalar-Plain">notifications</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">email</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">notify@example.com</span>
+</span><span class='line'><span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">bundle exec parallel_test -n 4 -t rspec spec</span>
+</span><span class='line'><span class="l-Scalar-Plain">branches</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">only</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">master</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>弊社オーマイグラスはprivate なreposもテストしたいので、<a href="http://travis-ci.com/">Travis PRO</a>使ってます。Restart Buildは、pro関係なく、自分にadmin権限あればrestartできます。権限足りないと押せないみたい。
-なお<a href="https://github.com/travis-ci/travis">cli client</a>からだと
-<code>$ travis restart 57.1</code> で実行できるらしい READMEより</p>
 
-<p>pro関係あるのは、&#8217;feedback &amp; support&#8217; のtabです。ここからメッセージを送ると、サポート宛にチケットが切られて、メールでやりとりします。ぼくがオーマイグラスにJoinしてからの一年弱で2回(2012-12-25, 2013-01-30)問い合わせしてます。開発者がそのまま返事くれるので、伝言ゲームにならないのがよかったです(当時)。</p>
+<p>サービスレベルで実運用してる<code>.travis.yml</code>見たいですよね!!! 観測範囲だとこのぐらい。</p>
 
-<p>タイミングで落ちるテストは近いうちに直します!!!</p>
+<ul>
+<li><a href="http://qa.atmarkit.co.jp/">ITエンジニア向け質問・回答コミュニティ &ndash; QA@IT</a> <a href="https://github.com/sanemat/soryu/blob/38cf21326f1515552f8f981398974e9af844976a/qa.atmarkit.co.jp.travis.yml">travis</a></li>
+<li><a href="http://starseeker.so/">starseeker</a> <a href="https://github.com/sanemat/soryu/blob/38cf21326f1515552f8f981398974e9af844976a/starseeker.so.travis.yml">travis</a></li>
+</ul>
+
+
+<p>他にもご存知でしたらpull requestください。
+<a href="https://github.com/sanemat/soryu">https://github.com/sanemat/soryu</a></p>
+
+<p><img src="/images/submarine_400x300.jpg" title="soryu" alt="soryu" /></p>
 
 <p>以上デース</p>
 </div>
@@ -131,7 +199,7 @@
   
 
 
-<time datetime="2013-09-03T23:46:00+09:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+<time datetime="2013-09-09T01:18:00+09:00" pubdate data-updated="true">Sep 9<span>th</span>, 2013</time>
       
 
 
@@ -139,7 +207,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/09/09/travis-yaml-for-service/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/09/09/travis-yaml-for-service/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -152,10 +220,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/14/local-whenever/" title="Previous Post: localのcronから朝会を通知したい">&laquo; localのcronから朝会を通知したい</a>
+        <a class="basic-alignment left" href="/blog/2013/09/03/travis-ci-restart-build/" title="Previous Post: テストを落としたのでTravis-CIのbuildを再キックする">&laquo; テストを落としたのでTravis-CIのbuildを再キックする</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/09/travis-yaml-for-service/" title="Next Post: .travis.ymlのギャラリー">.travis.ymlのギャラリー &raquo;</a>
       
     </p>
   </footer>
@@ -264,8 +330,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/';
-        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/';
+        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/09/09/travis-yaml-for-service/';
+        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/09/09/travis-yaml-for-service/';
         var disqus_script = 'embed.js';
       
     (function () {
