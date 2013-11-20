@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>なかむらくんに通報する、あるいはYeomanでbookmarkletを作る - OMG Tech Blog</title>
+  <title>rake stats - OMG Tech Blog</title>
   <meta name="author" content="OMG Engineers">
 
   
-  <meta name="description" content="こんにちは。さねまつです。 商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。 なかむらくんに通報する 技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、 &hellip;">
+  <meta name="description" content="こんにちは。さねまつです。弊社サービスで一番大きいのはspreeを使ったアプリケーションです。 それ以外に、sinatraで商品画像確認・rails4でデータ周りを扱うなどの衛星アプリがあります。まだ一つの巨大なアプリでギリギリまかないきれる感じですね。まかないきれてるのかな。いつかはSOA。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/11/20/rake-stats/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +71,7 @@
   
   <header>
     
-      <h1 class="entry-title">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る</h1>
+      <h1 class="entry-title">Rake Stats</h1>
     
     
       <p class="meta">
@@ -87,103 +87,97 @@
   
 
 
-<time datetime="2013-08-02T16:40:00+09:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2013</time>
+<time datetime="2013-11-20T12:50:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>こんにちは。さねまつです。</p>
+<div class="entry-content"><p>こんにちは。さねまつです。弊社サービスで一番大きいのはspreeを使ったアプリケーションです。
+<a href="http://www.ohmyglasses.jp"><img src="/images/omg-mono-app_800x600.gif" alt="omg-mono-app" /></a></p>
 
-<p>商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。</p>
+<p>それ以外に、sinatraで商品画像確認・rails4でデータ周りを扱うなどの衛星アプリがあります。まだ一つの巨大なアプリでギリギリまかないきれる感じですね。まかないきれてるのかな。いつかはSOA。</p>
 
-<h3>なかむらくんに通報する</h3>
+<p>see: <a href="https://engineering.groupon.com/2013/misc/i-tier-dismantling-the-monoliths/">I-Tier: Dismantling the Monoliths &ndash; Groupon Engineering Blog</a></p>
 
-<p><img src="/images/police_400x483.jpg" title="police" alt="なかむらくんに通報する" /></p>
-
-<p>技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、yoでbookmarklet用のtempleateをgenerateして、gruntで変更をwatch, 変更あったらminifyしてbookmarkletとして出力しています。変更をwatch~というのもgenerateしたtemplateに書いてあるので、やるのは <code>grunt server</code> 実行するだけです。</p>
-
-<p><a href="https://github.com/mrtaddy/omg-copy-sku">商品情報をアラートするブックマークレット</a></p>
-
-<h4>使い方</h4>
-
-<ol>
-<li>bookmarkletを登録します。(dist/bookmarklet.js)</li>
-<li><a href="http://www.ohmyglasses.jp/products/plus-omg-OMG-004-1">商品ページ</a>を開きます。</li>
-<li>bookmarkletを実行すると、ページ内の商品情報をスクレイピングしてalertします。</li>
-</ol>
-
-
-<h4>仕組み</h4>
+<p>一番大きいアプリケーションのrake stats:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yo bookmarklet <span class="c"># bookmarklet用のtemplateをgenerate</span>
-</span><span class='line'>grunt server
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>$ bundle exec rake stats
+</span><span class='line'>+----------------------+-------+-------+---------+---------+-----+-------+
+</span><span class='line'>| Name                 | Lines |   LOC | Classes | Methods | M/C | LOC/M |
+</span><span class='line'>+----------------------+-------+-------+---------+---------+-----+-------+
+</span><span class='line'>| Controllers          |  4393 |  3456 |      58 |     396 |   6 |     6 |
+</span><span class='line'>| Helpers              |   925 |   720 |       0 |      87 |   0 |     6 |
+</span><span class='line'>| Models               |  8680 |  6763 |     189 |     789 |   4 |     6 |
+</span><span class='line'>| Libraries            |  9723 |  8065 |     118 |     409 |   3 |    17 |
+</span><span class='line'>| Controller specs     |  1207 |   985 |       0 |       1 |   0 |   983 |
+</span><span class='line'>| Feature specs        |  6177 |  4627 |       0 |       5 |   0 |   923 |
+</span><span class='line'>| Helper specs         |   398 |   351 |       0 |       0 |   0 |     0 |
+</span><span class='line'>| Lib specs            |  1182 |  1005 |       0 |       0 |   0 |     0 |
+</span><span class='line'>| Model specs          | 12829 | 10834 |       0 |      23 |   0 |   469 |
+</span><span class='line'>| Routing specs        |    13 |    11 |       0 |       0 |   0 |     0 |
+</span><span class='line'>| Service specs        |  1508 |  1283 |       0 |       0 |   0 |     0 |
+</span><span class='line'>| Validator specs      |    50 |    44 |       0 |       0 |   0 |     0 |
+</span><span class='line'>| View specs           |   119 |    89 |       0 |       0 |   0 |     0 |
+</span><span class='line'>+----------------------+-------+-------+---------+---------+-----+-------+
+</span><span class='line'>| Total                | 47204 | 38233 |     365 |    1710 |   4 |    20 |
+</span><span class='line'>+----------------------+-------+-------+---------+---------+-----+-------+
+</span><span class='line'>  Code LOC: 19004     Test LOC: 19229     Code to Test Ratio: 1:1.0
+</span><span class='line'>$ date
+</span><span class='line'>2013年 11月19日 火曜日 13時21分26秒 JST
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>app/main.js を編集していくと保存するたびに dist/bookmarklet.js にbookmarkletを作成します。処理内容はgeneratorがGruntfile.js を生成していて、そこに書いてあります。</p>
+<p>see: <a href="http://journal.sooey.com/229">求人の際に「自社のコードベースがどれくらい健全か」というのをアピールする視点を持つとよいのではないか、と思いました。 &ndash; Sooey</a></p>
 
-<p>coffeescriptで書けたらいいなーというのはgruntfile書けば良さそうで、あとGruntfile自体もcoffeeで書けるそうだ(伝聞)。</p>
+<p>いや、一番大きいコードベースはWordPressな気もする… <a href="http://www.ohmyglasses.jp/blog/">メガネスタイルマガジンOMG PRESS</a></p>
 
-<h4>see</h4>
-
-<ul>
-<li><a href="http://qiita.com/sys1yagi/items/4d8c2994580c274fd3fa">Node.js &ndash; Yeomanのあれこれ &ndash; Qiita [キータ]</a></li>
-<li><a href="http://qiita.com/Layzie/items/5c4af49ef083b2c1cbf0">JavaScript &ndash; Bookmarklet作るのにYeoman使ってみる &ndash; Qiita [キータ]</a></li>
-</ul>
-
-
-<h3>その他なかむらくんに通報するtips</h3>
-
-<h4>なかむらくんに通報するブックマーク</h4>
-
-<p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nakamura@example.com&amp;cc=ops@example.com&amp;su=%e5%95%86%e5%93%81%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ab%e3%83%9f%e3%82%b9%e7%99%ba%e8%a6%8b&amp;body=&amp;tf=1">https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nakamura@example.com&amp;cc=ops@example.com&amp;su=%e5%95%86%e5%93%81%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ab%e3%83%9f%e3%82%b9%e7%99%ba%e8%a6%8b&amp;body=&amp;tf=1</a></p>
-
-<p>こちらはリンクだけ。やりたいことを最短で満たしたしいいやこれで。</p>
-
-<h4>管理画面のeditページ直接開くbookmarklet</h4>
-
-<p>商品ページからjQueryで要素拾って、管理画面の対応するeditページをopen</p>
-
-<h4>画像を横並びに比較して間違いに気づきやすいview</h4>
-
-<ul>
-<li>controllerはadmin側</li>
-<li>model, serviceは検索で使ってるものと同じ</li>
-<li>viewがちょっと違う</li>
-<li>だいたい<a href="http://www.ohmyglasses.jp/search/frame/mens?color%5B%5D=black&amp;color%5B%5D=gray&amp;shape=wellington">これ</a>の別view</li>
-</ul>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># wordpress-3.7.1-ja
+</span><span class='line'>$ find . -type f | xargs cat | wc -l
+</span><span class='line'>  338509
+</span><span class='line'># spree master
+</span><span class='line'>$ find . -type f | xargs cat | wc -l
+</span><span class='line'>  224648
+</span><span class='line'># omg-mono-app master
+</span><span class='line'>$ find . -type f | xargs cat | wc -l
+</span><span class='line'>  656648
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>編集ページのパーマリンクへリンクあり</p>
-
-<h3>実現したストーリー</h3>
-
-<p>before:</p>
-
-<ul>
-<li>商品情報が間違っているのを見つけた!</li>
-<li>どこに書いていいかわからない… 直していいかわからない… 直すのだるい…</li>
-<li>間違ってるから直してって言われたけどどの商品のどこだっけ</li>
-</ul>
-
-
-<p>after:</p>
-
-<ul>
-<li>商品情報が間違っているのを見つけた!</li>
-<li>自分でedit, キャッシュも消す</li>
-<li>コピペが楽になったので、送って直してもらう場合にもお互い分かりやすい</li>
-<li>ひとまずメールで残る</li>
-</ul>
-
-
-<p>ﾔｯﾀｰ! (メールってフォーマットだるいですねというのはまた別のお話)</p>
-
-<p>以上デース</p>
+<p>そんなことはなかった。</p>
 </div>
 
 
@@ -206,7 +200,7 @@
   
 
 
-<time datetime="2013-08-02T16:40:00+09:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2013</time>
+<time datetime="2013-11-20T12:50:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2013</time>
       
 
 
@@ -214,7 +208,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/11/20/rake-stats/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/11/20/rake-stats/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -227,10 +221,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/26/start-omg-engineers-blog/" title="Previous Post: Oh My Glasses エンジニアブログを立ち上げました！">&laquo; Oh My Glasses エンジニアブログを立ち上げました！</a>
+        <a class="basic-alignment left" href="/blog/2013/11/01/gyomu-contribution/" title="Previous Post: ギョームでもcontribution">&laquo; ギョームでもcontribution</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/14/local-whenever/" title="Next Post: localのcronから朝会を通知したい">localのcronから朝会を通知したい &raquo;</a>
       
     </p>
   </footer>
@@ -339,8 +331,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/';
-        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/';
+        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/11/20/rake-stats/';
+        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/11/20/rake-stats/';
         var disqus_script = 'embed.js';
       
     (function () {
