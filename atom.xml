@@ -4,7 +4,7 @@
   <title><![CDATA[OMG Tech Blog]]></title>
   <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
   <link href="http://tech.ohmyglasses.jp/"/>
-  <updated>2013-11-20T14:35:11+09:00</updated>
+  <updated>2013-12-02T21:15:54+09:00</updated>
   <id>http://tech.ohmyglasses.jp/</id>
   <author>
     <name><![CDATA[OMG Engineers]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spree のモデリング解説 第一弾]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/"/>
+    <updated>2013-12-02T20:59:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1</id>
+    <content type="html"><![CDATA[<p>こんにちは。kei-s です。当ブログやっと二人目の執筆者です。</p>
+
+<p>先日 <a href="http://kuniakirb.doorkeeper.jp/events/6616">Kuniaki.rb</a> というイベントの第一回が開かれ、
+そこで <a href="http://spreecommerce.com/">Spree</a> のモデリングについて LT をしました。</p>
+
+<p>(Spree とはなんぞや、などについては Sapporo RubyKaigi 2012 で発表した資料をご覧ください。 <a href="https://speakerdeck.com/kei_s/ruby-on-rails-and-spree">https://speakerdeck.com/kei_s/ruby-on-rails-and-spree</a> )</p>
+
+<script async class="speakerdeck-embed" data-id="54dc9090245301317cb5020c2f9a5198" data-ratio="1.33333333333333" src="http://tech.ohmyglasses.jp//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>(スライドの途中から本題が始まります)</p>
+
+<p>スライド中では、</p>
+
+<ul>
+<li><code>Product</code> と <code>Variant</code></li>
+<li><code>LineItem</code> と <code>InventoryUnit</code></li>
+</ul>
+
+
+<p>という対比をしています。
+前者の組は、サイト上に掲載する商品に関するモデルです。後者の組は、注文されたアイテムに関するモデルです。
+詳しいことはスライドに図示しているので、そちらを見てみてください。</p>
+
+<p>Spree の日本語情報はあまり無いので、第二弾ができるといいなあと思っています。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[rake stats]]></title>

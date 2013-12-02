@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Oh My Glasses エンジニアブログを立ち上げました！ - OMG Tech Blog</title>
+  <title>Spree のモデリング解説 第一弾 - OMG Tech Blog</title>
   <meta name="author" content="OMG Engineers">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="こんにちは。kei-s です。当ブログやっと二人目の執筆者です。 先日 Kuniaki.rb というイベントの第一回が開かれ、
+そこで Spree のモデリングについて LT をしました。 (Spree とはなんぞや、などについては Sapporo RubyKaigi 2012 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog/">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -72,7 +72,7 @@
   
   <header>
     
-      <h1 class="entry-title">Oh My Glasses エンジニアブログを立ち上げました！</h1>
+      <h1 class="entry-title">Spree のモデリング解説 第一弾</h1>
     
     
       <p class="meta">
@@ -88,14 +88,38 @@
   
 
 
-<time datetime="2013-07-26T20:45:00+09:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
+<time datetime="2013-12-02T20:59:00+09:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>こんにちは。kei-s です。当ブログやっと二人目の執筆者です。</p>
+
+<p>先日 <a href="http://kuniakirb.doorkeeper.jp/events/6616">Kuniaki.rb</a> というイベントの第一回が開かれ、
+そこで <a href="http://spreecommerce.com/">Spree</a> のモデリングについて LT をしました。</p>
+
+<p>(Spree とはなんぞや、などについては Sapporo RubyKaigi 2012 で発表した資料をご覧ください。 <a href="https://speakerdeck.com/kei_s/ruby-on-rails-and-spree">https://speakerdeck.com/kei_s/ruby-on-rails-and-spree</a> )</p>
+
+<script async class="speakerdeck-embed" data-id="54dc9090245301317cb5020c2f9a5198" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>(スライドの途中から本題が始まります)</p>
+
+<p>スライド中では、</p>
+
+<ul>
+<li><code>Product</code> と <code>Variant</code></li>
+<li><code>LineItem</code> と <code>InventoryUnit</code></li>
+</ul>
+
+
+<p>という対比をしています。
+前者の組は、サイト上に掲載する商品に関するモデルです。後者の組は、注文されたアイテムに関するモデルです。
+詳しいことはスライドに図示しているので、そちらを見てみてください。</p>
+
+<p>Spree の日本語情報はあまり無いので、第二弾ができるといいなあと思っています。</p>
 </div>
 
 
@@ -104,7 +128,7 @@
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">OMG Engineers</span></span>
+<span class="byline author vcard">Posted by <span class="fn">kei-s</span></span>
 
       
 
@@ -118,7 +142,7 @@
   
 
 
-<time datetime="2013-07-26T20:45:00+09:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
+<time datetime="2013-12-02T20:59:00+09:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2013</time>
       
 
 
@@ -126,7 +150,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -139,8 +163,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/11/20/rake-stats/" title="Previous Post: rake stats">&laquo; rake stats</a>
       
-        <a class="basic-alignment right" href="/blog/2013/08/02/bookmarklet-with-yeoman/" title="Next Post: なかむらくんに通報する、あるいはYeomanでbookmarkletを作る">なかむらくんに通報する、あるいはYeomanでbookmarkletを作る &raquo;</a>
       
     </p>
   </footer>
@@ -249,8 +273,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog/';
-        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog/';
+        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/';
+        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/';
         var disqus_script = 'embed.js';
       
     (function () {
