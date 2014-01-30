@@ -2,50 +2,54 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/07/26/start-omg-engineers-blog/</loc>
-        <lastmod>2013-07-26T22:15:23+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/08/02/bookmarklet-with-yeoman/</loc>
-        <lastmod>2013-08-28T10:57:03+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/08/14/local-whenever/</loc>
-        <lastmod>2013-08-28T10:57:03+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/</loc>
-        <lastmod>2013-09-05T14:44:53+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/09/09/travis-yaml-for-service/</loc>
-        <lastmod>2013-12-02T21:15:54+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/10/22/acts-as-omg-developer/</loc>
-        <lastmod>2013-12-02T21:15:54+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/11/01/gyomu-contribution/</loc>
-        <lastmod>2013-12-02T21:15:54+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/11/20/rake-stats/</loc>
-        <lastmod>2013-12-02T21:15:54+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/</loc>
-        <lastmod>2013-12-02T21:15:54+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://tech.ohmyglasses.jp/blog/2014/01/29/non-technical-co-founders/</loc>
+        <lastmod>2014-01-30T18:59:21+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/blog/archives/</loc>
-        <lastmod>2013-12-02T21:15:54+09:00</lastmod>
+        <lastmod>2014-01-30T18:59:21+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/</loc>
-        <lastmod>2013-12-02T21:15:54+09:00</lastmod>
+        <lastmod>2014-01-30T18:59:21+09:00</lastmod>
     </url>
     <url>
         <loc>http://tech.ohmyglasses.jp/robots.txt</loc>
-        <lastmod>2013-07-26T13:59:21+09:00</lastmod>
+        <lastmod>2013-12-08T20:22:14+09:00</lastmod>
     </url>
 </urlset>
