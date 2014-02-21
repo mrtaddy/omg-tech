@@ -4,7 +4,7 @@
   <title><![CDATA[OMG Tech Blog]]></title>
   <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
   <link href="http://tech.ohmyglasses.jp/"/>
-  <updated>2014-01-30T19:02:08+09:00</updated>
+  <updated>2014-02-21T20:56:33+09:00</updated>
   <id>http://tech.ohmyglasses.jp/</id>
   <author>
     <name><![CDATA[OMG Engineers]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[カラーモノクロカラーモノクロ]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2014/02/21/toggle-monochrome/"/>
+    <updated>2014-02-21T20:02:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2014/02/21/toggle-monochrome</id>
+    <content type="html"><![CDATA[<p>こんにちは。さねまつです。
+<img src="http://tech.ohmyglasses.jp/images/toggle-omg-garamond5_800x600.gif" alt="toggle monochrome" /></p>
+
+<p>カラーとモノクロをtoggleするbookmarklet書きました。<a href="https://github.com/mrtaddy/toggle-monochrome">toggle-monochrome</a></p>
+
+<h4>インサイト</h4>
+
+<p>なるほど〜ってなっただけでそんなになかった。既にちゃんと考えられている!</p>
+
+<h4>おまけ</h4>
+
+<p><a href="https://github.com/passy/generator-bookmarklet">generater-bookmarklet</a>がgruntからgulpになってておっってなった。</p>
+
+<p>そしてドヤ顔で同僚に見せに行ったら「アクセシビリティーチェックのそういう拡張あるよ」って教えてもらいました!!なるほど!そっちを使ったらいいと思います。</p>
+
+<h4>see</h4>
+
+<ul>
+<li><a href="http://ameblo.jp/ca-1pixel/entry-11770516521.html">色を色で見ないで｜1 pixel｜サイバーエージェント公式クリエイターズブログ</a></li>
+<li><a href="https://twitter.com/hail2u_/status/436742409376903168">https://twitter.com/hail2u_/status/436742409376903168</a></li>
+</ul>
+
+
+<p>以上デース</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[非エンジニアの創業者ふたり]]></title>

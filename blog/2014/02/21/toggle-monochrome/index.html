@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>テストを落としたのでTravis-CIのbuildを再キックする - OMG Tech Blog</title>
+  <title>カラーモノクロカラーモノクロ - OMG Tech Blog</title>
   <meta name="author" content="OMG Engineers">
 
   
-  <meta name="description" content="こんにちは。さねまつです。 Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。 &hellip;">
+  <meta name="description" content="こんにちは。さねまつです。 カラーとモノクロをtoggleするbookmarklet書きました。toggle-monochrome インサイト なるほど〜ってなっただけでそんなになかった。既にちゃんと考えられている! おまけ generater- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2014/02/21/toggle-monochrome/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +71,7 @@
   
   <header>
     
-      <h1 class="entry-title">テストを落としたのでTravis-CIのbuildを再キックする</h1>
+      <h1 class="entry-title">カラーモノクロカラーモノクロ</h1>
     
     
       <p class="meta">
@@ -87,26 +87,35 @@
   
 
 
-<time datetime="2013-09-03T23:46:00+09:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+<time datetime="2014-02-21T20:02:00+09:00" pubdate data-updated="true">Feb 21<span>st</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>こんにちは。さねまつです。</p>
+<div class="entry-content"><p>こんにちは。さねまつです。
+<img src="/images/toggle-omg-garamond5_800x600.gif" alt="toggle monochrome" /></p>
 
-<p>Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。</p>
+<p>カラーとモノクロをtoggleするbookmarklet書きました。<a href="https://github.com/mrtaddy/toggle-monochrome">toggle-monochrome</a></p>
 
-<p><img src="/images/travis-pro_400x400.gif" title="restart" alt="restart-build" /></p>
+<h4>インサイト</h4>
 
-<p>弊社オーマイグラスはprivate なreposもテストしたいので、<a href="http://travis-ci.com/">Travis PRO</a>使ってます。Restart Buildは、pro関係なく、自分にadmin権限あればrestartできます。権限足りないと押せないみたい。
-なお<a href="https://github.com/travis-ci/travis">cli client</a>からだと
-<code>$ travis restart 57.1</code> で実行できるらしい READMEより</p>
+<p>なるほど〜ってなっただけでそんなになかった。既にちゃんと考えられている!</p>
 
-<p>pro関係あるのは、&#8217;feedback &amp; support&#8217; のtabです。ここからメッセージを送ると、サポート宛にチケットが切られて、メールでやりとりします。ぼくがオーマイグラスにJoinしてからの一年弱で2回(2012-12-25, 2013-01-30)問い合わせしてます。開発者がそのまま返事くれるので、伝言ゲームにならないのがよかったです(当時)。</p>
+<h4>おまけ</h4>
 
-<p>タイミングで落ちるテストは近いうちに直します!!!</p>
+<p><a href="https://github.com/passy/generator-bookmarklet">generater-bookmarklet</a>がgruntからgulpになってておっってなった。</p>
+
+<p>そしてドヤ顔で同僚に見せに行ったら「アクセシビリティーチェックのそういう拡張あるよ」って教えてもらいました!!なるほど!そっちを使ったらいいと思います。</p>
+
+<h4>see</h4>
+
+<ul>
+<li><a href="http://ameblo.jp/ca-1pixel/entry-11770516521.html">色を色で見ないで｜1 pixel｜サイバーエージェント公式クリエイターズブログ</a></li>
+<li><a href="https://twitter.com/hail2u_/status/436742409376903168">https://twitter.com/hail2u_/status/436742409376903168</a></li>
+</ul>
+
 
 <p>以上デース</p>
 </div>
@@ -131,7 +140,7 @@
   
 
 
-<time datetime="2013-09-03T23:46:00+09:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+<time datetime="2014-02-21T20:02:00+09:00" pubdate data-updated="true">Feb 21<span>st</span>, 2014</time>
       
 
 
@@ -139,7 +148,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2014/02/21/toggle-monochrome/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2014/02/21/toggle-monochrome/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -152,10 +161,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/14/local-whenever/" title="Previous Post: localのcronから朝会を通知したい">&laquo; localのcronから朝会を通知したい</a>
+        <a class="basic-alignment left" href="/blog/2014/01/29/non-technical-co-founders/" title="Previous Post: 非エンジニアの創業者ふたり">&laquo; 非エンジニアの創業者ふたり</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/09/travis-yaml-for-service/" title="Next Post: .travis.ymlのギャラリー">.travis.ymlのギャラリー &raquo;</a>
       
     </p>
   </footer>
@@ -264,8 +271,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/';
-        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2013/09/03/travis-ci-restart-build/';
+        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2014/02/21/toggle-monochrome/';
+        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2014/02/21/toggle-monochrome/';
         var disqus_script = 'embed.js';
       
     (function () {
