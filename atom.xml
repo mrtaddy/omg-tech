@@ -4,7 +4,7 @@
   <title><![CDATA[OMG Tech Blog]]></title>
   <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
   <link href="http://tech.ohmyglasses.jp/"/>
-  <updated>2014-02-21T20:56:33+09:00</updated>
+  <updated>2014-03-19T13:53:56+09:00</updated>
   <id>http://tech.ohmyglasses.jp/</id>
   <author>
     <name><![CDATA[OMG Engineers]]></name>
@@ -12,6 +12,109 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[グロースハッカーになってみた]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2014/03/19/be-a-growth-hacker/"/>
+    <updated>2014-03-19T01:01:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2014/03/19/be-a-growth-hacker</id>
+    <content type="html"><![CDATA[<p>こんにちは。さねまつです。2月からGrowth Hackerになってみました。</p>
+
+<p><img src="http://tech.ohmyglasses.jp/images/balances_800x563.jpg" alt="AB testing" /></p>
+
+<h1>Growth Hacking</h1>
+
+<p>Growth Hackingチームは自分一人がフルコミットで、あとはデザイナーが週に1日分ぐらい時間を割いています。</p>
+
+<h2>まず結果は?</h2>
+
+<p>自分で立てた目標数値を達成出来ていない。</p>
+
+<h2>どんな目標立てたの?</h2>
+
+<p>大きく目標は、サイト全体のコンバージョンレートに置いた。</p>
+
+<h3>グロースハッカーなのにユーザー獲得じゃないの?</h3>
+
+<p>スタートにあたって重たい順に倒していくことにした。商材のリピート間隔と、リピート率と、から言うと&#8221;現時点では&#8221;重たいのがそこだったので。</p>
+
+<h2>どういうことしてるの?</h2>
+
+<p>仮説立てるのに必要なだけの数字継続的に計測できるようにする。</p>
+
+<p>数字計測して課題となるポイントを洗い出す。</p>
+
+<p>課題に対して仮説を出して、効果とコストを見積もる。</p>
+
+<p>効果とコストからスコアを計算して、スコアの高い順に着手。</p>
+
+<p>自分一人でやって、半日や一日で終わらないストーリーはやらない。</p>
+
+<p>入れてく策はoptimizely上で対照実験しながら入れていく。この辺は普通のA/Bテスト。
+optimizely上だけでjQuery書いて差し替える場合と、コードベースに片方<code>display: none;</code> で突っ込んでoptimizely上で<code>display: block</code>に書き換える場合がある。
+一定数の効果が見られる流入を与えて、勝者が出たらviewにちょろちょろっと書いてたcssやjavascriptをあるべき場所に書き直す。
+俺のバリューってoptimizely上でちょろっとjQuery書くそれなの?って思うとアレ?って気がしないでもない。</p>
+
+<p>こんなの。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body:not(.mobile) .main-header-guide__search&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body:not(.mobile) .test-search&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;block&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body:not(.mobile) input.search-box__search-input.test-search&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;placeholder&#39;</span><span class="p">,</span> <span class="s1">&#39;サイト内を検索　例：アンダーリム&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>結果が出てればいいんだけど、全体的な要因で伸びてる以外は誤差レベルなので、growth hackingやってます!って言いたいだけになってる。</p>
+
+<p>マズイ。</p>
+
+<h2>はじめ思ってたこととそうでもないこと</h2>
+
+<p>A/Bテストどんどんやっていこう!と思ってたけど、なかなか進まなかった。
+数字の根拠が足りなくて説明できないことが多かった。</p>
+
+<p>もやっとしてた。「グロースハッカー」読んでたらいい定義があった。</p>
+
+<blockquote><p>グロースハッカーはマーケターとエンジニアのハイブリッド &ndash; ライアン・ホリデイ『グロースハッカー』</p></blockquote>
+
+<p>なるほど!
+マーケティング!? マーケターだったのか俺は。
+定義でもやもやが解決するってのはそんなこと無いんだけど、ちょっと進んだ。もうちょっとエンジニアタスクに時間割ければ色々出来そうな気がしてたのに、数字計測したり根拠考えたりばっかりしててどうなるんだろう、って思うこともあったけどマーケターなら仕方ないな。</p>
+
+<h2>これから</h2>
+
+<p><a href="http://symsonic.jp/2014/02/02/growthhack01/">GrowthHackにおいて一番大事なこと | symsonic</a></p>
+
+<p>facebook: 10日以内に7人以上の友人と友達になる割合をKPI</p>
+
+<p>とかairbnbでプロのカメラマンに部屋の写真を撮ってもらうとかそういうキラーKPI見つけるしないと。</p>
+
+<h2>立てるべきだった目標</h2>
+
+<ul>
+<li>事業が成長する魔法のKPIをみつける</li>
+<li>お客様が流入する魔法のチャネルを発掘する</li>
+<li>そしてそれらの土台作り</li>
+</ul>
+
+
+<p>ぼくがabテストを一番うまく扱えるんだ！ex-zyngaですし</p>
+
+<p><img src="http://tech.ohmyglasses.jp/images/miner_532x800.jpg" alt="miner" /></p>
+
+<p>マーケターやデータマイナーっぽい意識を持ってるとちょうどいいのかも。</p>
+
+<h2>募集</h2>
+
+<p>一緒にGrowth Hackingやりたい人募集!</p>
+
+<h2>まとめ</h2>
+
+<p>事業を育てるぞ。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[カラーモノクロカラーモノクロ]]></title>
