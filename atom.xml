@@ -4,7 +4,7 @@
   <title><![CDATA[OMG Tech Blog]]></title>
   <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
   <link href="http://tech.ohmyglasses.jp/"/>
-  <updated>2014-03-19T18:55:20+09:00</updated>
+  <updated>2014-06-02T21:12:44+09:00</updated>
   <id>http://tech.ohmyglasses.jp/</id>
   <author>
     <name><![CDATA[OMG Engineers]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tokyo Rubyist Meetupに登壇しました]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2014/06/02/spree-trbmeetup/"/>
+    <updated>2014-06-02T20:55:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2014/06/02/spree-trbmeetup</id>
+    <content type="html"><![CDATA[<p>こんにちは。kei-s です。</p>
+
+<p>先日 <a href="http://trbmeetup.doorkeeper.jp/">Tokyo Rubyist Meetup</a> で開催された <a href="http://trbmeetup.doorkeeper.jp/events/10739">eコマースとRails &ndash; Spreeの全て</a> というイベントに登壇しました。
+そこで、サービスで <a href="http://spreecommerce.com/">Spree</a> をどのように利用しているかについて20分ほどお話ししました。</p>
+
+<p>Spree とはなんぞや、などについては過去に発表した資料をご覧ください。</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/kei_s/ruby-on-rails-and-spree">How a small team built an e-commerce service w/ Ruby on Rails and Spree // Speaker Deck</a></li>
+<li><a href="http://tech.ohmyglasses.jp/blog/2013/12/02/spree-modeling-1/">Spree のモデリング解説 第一弾 &ndash; OMG Tech Blog</a></li>
+</ul>
+
+
+<script async class="speakerdeck-embed" data-id="fe74a650bda6013191822a9c30b9cc56" data-ratio="1.33333333333333" src="http://tech.ohmyglasses.jp//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>スライド中では、なぜ Spree を選んだのか、Spree の良いところ悪いところ、カスタマイズの方法などを説明しています。</p>
+
+<p>今回 Tokyo Rubyist Meetup に登壇して、日本には Spree に興味がある方が思った以上にいたことに驚きました！
+まだまだ日本での導入事例が少ないなか、知見を共有できて嬉しいです。</p>
+
+<p>また、一緒に登壇した Degica の <a href="https://twitter.com/shioyama">@shioyama</a> さんと発表前とお話しして、実際に Spree を使っている方と情報交換でき、とても勉強になりました。</p>
+
+<p>登壇をお誘いしていただいた Tokyo Rubyist Meetup 主催の <a href="https://twitter.com/pwim">@pwim</a> さん、ありがとうございました！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[グロースハッカーになってみた]]></title>
@@ -113,6 +145,46 @@ optimizely上だけでjQuery書いて差し替える場合と、コードベー�
 <h2>まとめ</h2>
 
 <p>事業を育てるぞ。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Spree のモデリング解説 第二弾]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2/"/>
+    <updated>2014-02-26T16:00:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2</id>
+    <content type="html"><![CDATA[<p>今日は payment まわりです。</p>
+
+<p><a href="http://guides.spreecommerce.com/user/payment_methods.html">Payment Methods &ndash; User Guide | Spree Commerce</a>
+<a href="http://guides.spreecommerce.com/user/payment_states.html">Payment States &ndash; User Guide | Spree Commerce</a>
+<a href="http://guides.spreecommerce.com/developer/payments.html">Payments &ndash; Developer Guide | Spree Commerce</a></p>
+
+<h1>登場人物</h1>
+
+<ul>
+<li>Spree::Order</li>
+<li>Spree::Payment</li>
+<li>Spree::PaymentMethod
+
+<ul>
+<li>Spree::Gateway</li>
+</ul>
+</li>
+<li>Spree::CreditCard</li>
+</ul>
+
+
+<p>Spree::Gateway, Spree::CreditCard はどちらもクレジットカード決済の場合に利用するモデル。
+Spree はクレカ決済以外も対応できるようになっているが、クレカ決済の場合は特別に実装が揃っている。
+このあたり、初見だと区別が分かりにくいと思われる。</p>
+
+<h2>Spree::Payment</h2>
+
+<h1>Spree::Payment の周り</h1>
+
+<p><img src="http://tech.ohmyglasses.jp/images/spree_payment_model_relation.png" alt="spree payment model relation" /></p>
+
+<p>Spree::PaymentMethod は</p>
 ]]></content>
   </entry>
   

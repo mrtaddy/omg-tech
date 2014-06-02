@@ -9,7 +9,7 @@
   <meta name="author" content="OMG Engineers">
 
   
-  <meta name="description" content="こんにちは。さねまつです。 商品情報簡単に編集できるといいね、ということでなかむらくんに通報するためのbookmarkletをいくつか作りました。 なかむらくんに通報する 技術的にはYeomanでbookmarkletを作ってみた話です。もう少し細かく言うと、 &hellip;">
+  <meta name="description" content="こんにちは。さねまつです。 Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,158 @@
       <div id="content">
         <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/03/travis-ci-restart-build/">テストを落としたのでTravis-CIのbuildを再キックする</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-03T23:46:00+09:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>こんにちは。さねまつです。</p>
+
+<p>Travis-CIでテストを落とした時に、capybaraか何かタイミングのせいで失敗した!(だからオレは悪くない!)と思い込めたら、歯車アイコンの&#8217;Restart Build&#8217;を選んでbuildを再キックします。</p>
+
+<p><img src="/images/travis-pro_400x400.gif" title="restart" alt="restart-build" /></p>
+
+<p>弊社オーマイグラスはprivate なreposもテストしたいので、<a href="http://travis-ci.com/">Travis PRO</a>使ってます。Restart Buildは、pro関係なく、自分にadmin権限あればrestartできます。権限足りないと押せないみたい。
+なお<a href="https://github.com/travis-ci/travis">cli client</a>からだと
+<code>$ travis restart 57.1</code> で実行できるらしい READMEより</p>
+
+<p>pro関係あるのは、&#8217;feedback &amp; support&#8217; のtabです。ここからメッセージを送ると、サポート宛にチケットが切られて、メールでやりとりします。ぼくがオーマイグラスにJoinしてからの一年弱で2回(2012-12-25, 2013-01-30)問い合わせしてます。開発者がそのまま返事くれるので、伝言ゲームにならないのがよかったです(当時)。</p>
+
+<p>タイミングで落ちるテストは近いうちに直します!!!</p>
+
+<p>以上デース</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/14/local-whenever/">Localのcronから朝会を通知したい</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-14T10:25:00+09:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>こんにちは。さねまつです。</p>
+
+<p>ローカルのcrontab, 特に管理してなくてうっかり消しました。</p>
+
+<h3>crontab</h3>
+
+<p><img src="/images/alarm_400x267.jpg" title="alarm" alt="crontab" /></p>
+
+<p>wheneverで書いてリポジトリ管理しておくとうれしいですね。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">every</span> <span class="ss">:weekday</span><span class="p">,</span> <span class="ss">at</span><span class="p">:</span> <span class="s1">&#39;10:15 am&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">command</span> <span class="s2">&quot;echo &#39;朝会です&#39;| </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;PATH_TO_HIPCHAT_CLI_BIN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -t </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;HIPCHAT_TOKEN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -r </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;ROOM_AOBA&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -f &#39;sebastian&#39;&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">every</span> <span class="ss">:thursday</span><span class="p">,</span> <span class="ss">at</span><span class="p">:</span> <span class="s1">&#39;3pm&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">command</span> <span class="s2">&quot;echo &#39;コードレビューです&#39;| </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;PATH_TO_HIPCHAT_CLI_BIN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -t </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;HIPCHAT_TOKEN&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -r </span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;ROOM_AOBA&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2"> -f &#39;sebastian&#39;&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>こんな感じ。<a href="https://github.com/mrtaddy/sebastian/blob/e6f3ec4ea6a55b319c1250e5b8d9fd79af2c7a55/config/schedule.rb">sebastian</a></p>
+
+<p>heroku エコシステム駆使するとか、空いてるサーバーにいれちゃうとか、ちょっと考えてめんどくさくなったのでローカルのまま運用してます。</p>
+
+<h3>hipchat api</h3>
+
+<p>どれ使ってもいいんじゃないでしょうか(未確認)
+<a href="https://www.hipchat.com/docs/api/libraries">https://www.hipchat.com/docs/api/libraries</a></p>
+
+<ul>
+<li>bash
+
+<ul>
+<li><a href="https://github.com/hipchat/hipchat-cli">https://github.com/hipchat/hipchat-cli</a></li>
+</ul>
+</li>
+<li>ruby
+
+<ul>
+<li><a href="https://github.com/hipchat/hipchat-rb">https://github.com/hipchat/hipchat-rb</a></li>
+<li><a href="https://github.com/czarneckid/hipchat-api">https://github.com/czarneckid/hipchat-api</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p>pure rubyの使うと取り回し良さそうなのですが、ひとまずbash版で動いているのでほっといてます。パイプで動くとunixのテコの原理に載ってる気になれてよい。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;コードレビューです&#39;</span>| ./hipchat_room_message -t TOKEN -r ROOM_NUMBER -f NAME
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>設定管理は大げさじゃないのがいいなと<a href="https://rubygems.org/gems/dotenv">dotenv</a>使ってます。まあまあ便利。</p>
+
+<p>see: <a href="https://www.ruby-toolbox.com/categories/Configuration_Management">The Ruby Toolbox &ndash; Configuration Management</a></p>
+
+<h3>ローカルで動かしてる最大の欠点</h3>
+
+<p>朝会開始の時間に自分が出社してないと発言しないので、あれだ。可視化されますね。</p>
+
+<p>以上デース</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -274,7 +426,15 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/02/spree-trbmeetup/">Tokyo Rubyist Meetupに登壇しました</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/19/be-a-growth-hacker/">グロースハッカーになってみた</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/26/spree-modeling-2/">Spree のモデリング解説 第二弾</a>
       </li>
     
       <li class="post">
@@ -283,14 +443,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/29/non-technical-co-founders/">非エンジニアの創業者ふたり</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/02/spree-modeling-1/">Spree のモデリング解説 第一弾</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/20/rake-stats/">rake stats</a>
       </li>
     
   </ul>
