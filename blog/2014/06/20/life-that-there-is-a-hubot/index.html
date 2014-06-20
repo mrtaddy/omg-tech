@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Spree のモデリング解説 第二弾 - OMG Tech Blog</title>
+  <title>hubotの居る生活 - OMG Tech Blog</title>
   <meta name="author" content="OMG Engineers">
 
   
-  <meta name="description" content="今日は payment まわりです。 Payment Methods &ndash; User Guide | Spree Commerce
-Payment States &ndash; User Guide | Spree Commerce
-Payments &ndash; Developer &hellip;">
+  <meta name="description" content="こんにちは。さねまつです。Growth Hackerゆるくクビになって5月半ばからエンジニアに戻ってます。 今hubot-scriptブームが社内でぼくと1syoだけに吹いてます。さらに、「そろそろちゃんとした使えるものを作ってよ(1syo)」と煽られてます。 omg-hubot &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Payments &ndash; Developer &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2/">
+  <link rel="canonical" href="http://tech.ohmyglasses.jp/blog/2014/06/20/life-that-there-is-a-hubot/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -84,7 +82,7 @@ Payments &ndash; Developer &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Spree のモデリング解説 第二弾</h1>
+      <h1 class="entry-title">Hubotの居る生活</h1>
     
     
       <p class="meta">
@@ -100,45 +98,74 @@ Payments &ndash; Developer &hellip;">
   
 
 
-<time datetime="2014-02-26T16:00:00+09:00" pubdate data-updated="true">Feb 26<span>th</span>, 2014</time>
+<time datetime="2014-06-20T18:29:00+09:00" pubdate data-updated="true">Jun 20<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>今日は payment まわりです。</p>
+<div class="entry-content"><p>こんにちは。さねまつです。Growth Hackerゆるくクビになって5月半ばからエンジニアに戻ってます。</p>
 
-<p><a href="http://guides.spreecommerce.com/user/payment_methods.html">Payment Methods &ndash; User Guide | Spree Commerce</a>
-<a href="http://guides.spreecommerce.com/user/payment_states.html">Payment States &ndash; User Guide | Spree Commerce</a>
-<a href="http://guides.spreecommerce.com/developer/payments.html">Payments &ndash; Developer Guide | Spree Commerce</a></p>
+<p>今<code>hubot-script</code>ブームが社内でぼくと1syoだけに吹いてます。さらに、「そろそろちゃんとした使えるものを作ってよ(1syo)」と煽られてます。</p>
 
-<h1>登場人物</h1>
+<p><a href="https://github.com/mrtaddy/omg-hubot">omg-hubot</a></p>
 
-<ul>
-<li>Spree::Order</li>
-<li>Spree::Payment</li>
-<li>Spree::PaymentMethod
+<h2>1syoが作ったリスト</h2>
 
 <ul>
-<li>Spree::Gateway</li>
-</ul>
-</li>
-<li>Spree::CreditCard</li>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/travisci.coffee">travisci</a></li>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/airbrake.coffee">airbrake</a></li>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/sebastian.coffee">sebastian</a></li>
 </ul>
 
 
-<p>Spree::Gateway, Spree::CreditCard はどちらもクレジットカード決済の場合に利用するモデル。
-Spree はクレカ決済以外も対応できるようになっているが、クレカ決済の場合は特別に実装が揃っている。
-このあたり、初見だと区別が分かりにくいと思われる。</p>
+<h2>kei-sが作ったリスト</h2>
 
-<h2>Spree::Payment</h2>
+<ul>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/deploy-announce.coffee">deploy-announce</a></li>
+</ul>
 
-<h1>Spree::Payment の周り</h1>
 
-<p><img src="/images/spree_payment_model_relation.png" alt="spree payment model relation" /></p>
+<h2>ぼくが作ったリスト</h2>
 
-<p>Spree::PaymentMethod は</p>
+<ul>
+<li><a href="https://github.com/sanemat/hubot-tantanmen">hubot-tantanmen</a></li>
+<li><a href="https://github.com/sanemat/hubot-phonetic-alphabet">hubot-phonetic-alphabet</a></li>
+<li><a href="https://github.com/sanemat/hubot-53cal-jp">hubot-53cal-jp</a></li>
+<li><a href="https://github.com/sanemat/hubot-google-transliterate">hubot-google-transliterate</a></li>
+</ul>
+
+
+<p>たしかに!! しかも一番使えるゴミ収集情報botは勝手にページスクレイピングしてて怒られるやつだ。まだまだ作るぞ。</p>
+
+<h1>背景</h1>
+
+<p>最近、エンジニアチャットをhipchatからslack(+hubot)に変えました。</p>
+
+<h2>hipchat pros</h2>
+
+<ul>
+<li>iphoneクライアントの出来が良い push notificationちゃんと来るなど</li>
+<li>画像を上げると、s3直アドレスになるので、アップローダー代わりになる 特にiphoneからの場合便利</li>
+<li>ユーザー数5までは無料、そこからはユーザー課金(乗り換え2014-05-15当時, 現在2014-06-20はユーザー数無制限)</li>
+</ul>
+
+
+<h2>slack pros</h2>
+
+<ul>
+<li>ユーザーのアイコンが表示される 重要</li>
+<li>画像を上げるとslackのユーザー認証が間に入るので、正しい権限のある人だけがアクセスできる</li>
+<li>他サービスとのintegration 5までは無料、そこからはユーザー課金</li>
+</ul>
+
+
+<p>slackのintegration課金をひとまずすり抜けようと、通知系をhubotに集約してます。
+github, hubot, newrelicの3本に抑えてる。
+さてslackの課金体型変わったらどうしよ?</p>
+
+<p>以上デース</p>
 </div>
 
 
@@ -147,7 +174,7 @@ Spree はクレカ決済以外も対応できるようになっているが、�
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">OMG Engineers</span></span>
+<span class="byline author vcard">Posted by <span class="fn">sanemat</span></span>
 
       
 
@@ -161,7 +188,7 @@ Spree はクレカ決済以外も対応できるようになっているが、�
   
 
 
-<time datetime="2014-02-26T16:00:00+09:00" pubdate data-updated="true">Feb 26<span>th</span>, 2014</time>
+<time datetime="2014-06-20T18:29:00+09:00" pubdate data-updated="true">Jun 20<span>th</span>, 2014</time>
       
 
 
@@ -169,7 +196,7 @@ Spree はクレカ決済以外も対応できるようになっているが、�
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.ohmyglasses.jp/blog/2014/06/20/life-that-there-is-a-hubot/" data-via="ohmyglassesjp" data-counturl="http://tech.ohmyglasses.jp/blog/2014/06/20/life-that-there-is-a-hubot/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -182,10 +209,8 @@ Spree はクレカ決済以外も対応できるようになっているが、�
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/21/toggle-monochrome/" title="Previous Post: カラーモノクロカラーモノクロ">&laquo; カラーモノクロカラーモノクロ</a>
+        <a class="basic-alignment left" href="/blog/2014/06/02/spree-trbmeetup/" title="Previous Post: Tokyo Rubyist Meetupに登壇しました">&laquo; Tokyo Rubyist Meetupに登壇しました</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/03/19/be-a-growth-hacker/" title="Next Post: グロースハッカーになってみた">グロースハッカーになってみた &raquo;</a>
       
     </p>
   </footer>
@@ -224,15 +249,15 @@ Spree はクレカ決済以外も対応できるようになっているが、�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/20/life-that-there-is-a-hubot/">hubotの居る生活</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/02/spree-trbmeetup/">Tokyo Rubyist Meetupに登壇しました</a>
       </li>
     
       <li class="post">
         <a href="/blog/2014/03/19/be-a-growth-hacker/">グロースハッカーになってみた</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/26/spree-modeling-2/">Spree のモデリング解説 第二弾</a>
       </li>
     
       <li class="post">
@@ -294,8 +319,8 @@ Spree はクレカ決済以外も対応できるようになっているが、�
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2/';
-        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2/';
+        var disqus_identifier = 'http://tech.ohmyglasses.jp/blog/2014/06/20/life-that-there-is-a-hubot/';
+        var disqus_url = 'http://tech.ohmyglasses.jp/blog/2014/06/20/life-that-there-is-a-hubot/';
         var disqus_script = 'embed.js';
       
     (function () {

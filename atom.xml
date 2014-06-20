@@ -4,7 +4,7 @@
   <title><![CDATA[OMG Tech Blog]]></title>
   <link href="http://tech.ohmyglasses.jp/atom.xml" rel="self"/>
   <link href="http://tech.ohmyglasses.jp/"/>
-  <updated>2014-06-02T21:12:44+09:00</updated>
+  <updated>2014-06-20T21:29:32+09:00</updated>
   <id>http://tech.ohmyglasses.jp/</id>
   <author>
     <name><![CDATA[OMG Engineers]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[hubotの居る生活]]></title>
+    <link href="http://tech.ohmyglasses.jp/blog/2014/06/20/life-that-there-is-a-hubot/"/>
+    <updated>2014-06-20T18:29:00+09:00</updated>
+    <id>http://tech.ohmyglasses.jp/blog/2014/06/20/life-that-there-is-a-hubot</id>
+    <content type="html"><![CDATA[<p>こんにちは。さねまつです。Growth Hackerゆるくクビになって5月半ばからエンジニアに戻ってます。</p>
+
+<p>今<code>hubot-script</code>ブームが社内でぼくと1syoだけに吹いてます。さらに、「そろそろちゃんとした使えるものを作ってよ(1syo)」と煽られてます。</p>
+
+<p><a href="https://github.com/mrtaddy/omg-hubot">omg-hubot</a></p>
+
+<h2>1syoが作ったリスト</h2>
+
+<ul>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/travisci.coffee">travisci</a></li>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/airbrake.coffee">airbrake</a></li>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/sebastian.coffee">sebastian</a></li>
+</ul>
+
+
+<h2>kei-sが作ったリスト</h2>
+
+<ul>
+<li><a href="https://github.com/mrtaddy/omg-hubot/blob/42213d04e91d99034631e0d89958df6ad36ab1e9/scripts/deploy-announce.coffee">deploy-announce</a></li>
+</ul>
+
+
+<h2>ぼくが作ったリスト</h2>
+
+<ul>
+<li><a href="https://github.com/sanemat/hubot-tantanmen">hubot-tantanmen</a></li>
+<li><a href="https://github.com/sanemat/hubot-phonetic-alphabet">hubot-phonetic-alphabet</a></li>
+<li><a href="https://github.com/sanemat/hubot-53cal-jp">hubot-53cal-jp</a></li>
+<li><a href="https://github.com/sanemat/hubot-google-transliterate">hubot-google-transliterate</a></li>
+</ul>
+
+
+<p>たしかに!! しかも一番使えるゴミ収集情報botは勝手にページスクレイピングしてて怒られるやつだ。まだまだ作るぞ。</p>
+
+<h1>背景</h1>
+
+<p>最近、エンジニアチャットをhipchatからslack(+hubot)に変えました。</p>
+
+<h2>hipchat pros</h2>
+
+<ul>
+<li>iphoneクライアントの出来が良い push notificationちゃんと来るなど</li>
+<li>画像を上げると、s3直アドレスになるので、アップローダー代わりになる 特にiphoneからの場合便利</li>
+<li>ユーザー数5までは無料、そこからはユーザー課金(乗り換え2014-05-15当時, 現在2014-06-20はユーザー数無制限)</li>
+</ul>
+
+
+<h2>slack pros</h2>
+
+<ul>
+<li>ユーザーのアイコンが表示される 重要</li>
+<li>画像を上げるとslackのユーザー認証が間に入るので、正しい権限のある人だけがアクセスできる</li>
+<li>他サービスとのintegration 5までは無料、そこからはユーザー課金</li>
+</ul>
+
+
+<p>slackのintegration課金をひとまずすり抜けようと、通知系をhubotに集約してます。
+github, hubot, newrelicの3本に抑えてる。
+さてslackの課金体型変わったらどうしよ?</p>
+
+<p>以上デース</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tokyo Rubyist Meetupに登壇しました]]></title>
@@ -145,46 +214,6 @@ optimizely上だけでjQuery書いて差し替える場合と、コードベー�
 <h2>まとめ</h2>
 
 <p>事業を育てるぞ。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Spree のモデリング解説 第二弾]]></title>
-    <link href="http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2/"/>
-    <updated>2014-02-26T16:00:00+09:00</updated>
-    <id>http://tech.ohmyglasses.jp/blog/2014/02/26/spree-modeling-2</id>
-    <content type="html"><![CDATA[<p>今日は payment まわりです。</p>
-
-<p><a href="http://guides.spreecommerce.com/user/payment_methods.html">Payment Methods &ndash; User Guide | Spree Commerce</a>
-<a href="http://guides.spreecommerce.com/user/payment_states.html">Payment States &ndash; User Guide | Spree Commerce</a>
-<a href="http://guides.spreecommerce.com/developer/payments.html">Payments &ndash; Developer Guide | Spree Commerce</a></p>
-
-<h1>登場人物</h1>
-
-<ul>
-<li>Spree::Order</li>
-<li>Spree::Payment</li>
-<li>Spree::PaymentMethod
-
-<ul>
-<li>Spree::Gateway</li>
-</ul>
-</li>
-<li>Spree::CreditCard</li>
-</ul>
-
-
-<p>Spree::Gateway, Spree::CreditCard はどちらもクレジットカード決済の場合に利用するモデル。
-Spree はクレカ決済以外も対応できるようになっているが、クレカ決済の場合は特別に実装が揃っている。
-このあたり、初見だと区別が分かりにくいと思われる。</p>
-
-<h2>Spree::Payment</h2>
-
-<h1>Spree::Payment の周り</h1>
-
-<p><img src="http://tech.ohmyglasses.jp/images/spree_payment_model_relation.png" alt="spree payment model relation" /></p>
-
-<p>Spree::PaymentMethod は</p>
 ]]></content>
   </entry>
   
